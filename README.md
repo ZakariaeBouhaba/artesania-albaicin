@@ -35,7 +35,7 @@ cd artisania-albaycin
 ```bash
 cd backend
 npm install
-cp .env.example .env       # fill in your DB credentials and generate JWT secrets
+cp .env.example .env       
 ```
 
 **Generate JWT secrets:**
@@ -46,9 +46,9 @@ Run it twice — once for `JWT_ACCESS_SECRET`, once for `JWT_REFRESH_SECRET`.
 
 **Create the database and run migrations:**
 ```bash
-createdb artisania_albaycin   # or use pgAdmin / psql
+createdb artisania_albaycin   
 npm run migrate
-npm run seed                  # optional: loads sample products
+npm run seed                  
 ```
 
 **Start the backend (port 3001):**
@@ -61,7 +61,7 @@ npm run dev
 ```bash
 cd ../frontend
 npm install
-cp .env.example .env       # edit VITE_WHATSAPP_NUMBER if needed
+cp .env.example .env       
 npm run dev                # starts on http://localhost:5173
 ```
 
