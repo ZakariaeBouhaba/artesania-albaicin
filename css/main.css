@@ -1,0 +1,169 @@
+/* =========================================
+   MAIN.CSS — Variables globales del proyecto
+   Bazar Granada
+   ========================================= */
+
+:root {
+  /* ── Colores principales ── */
+  --color-navbar:   #3D1F0D;   /* Marrón oscuro — navbar y footer */
+  --color-dorado:   #D4A853;   /* Dorado — acentos y detalles */
+  --color-beige:    #F5E6D3;   /* Beige — fondo de secciones */
+  --color-fondo:    #FAFAF8;   /* Blanco roto — fondo general */
+  --color-marron:   #8B4513;   /* Marrón claro — precios y botones */
+  --color-texto:    #1A1A1A;   /* Casi negro — texto principal */
+
+  /* ── Colores secundarios ── */
+  --color-dorado-hover:  #C49A3C;   /* Dorado oscuro para hover */
+  --color-marron-hover:  #6B3410;   /* Marrón oscuro para hover */
+  --color-beige-dark:    #E8D5BC;   /* Beige oscuro para bordes */
+  --color-texto-suave:   #5A4A3A;   /* Texto secundario */
+
+  /* ── Tipografía ── */
+  --font-titulo:  'Playfair Display', serif;   /* Títulos elegantes */
+  --font-cuerpo:  'Lato', sans-serif;          /* Texto general */
+
+  /* ── Tamaños de fuente ── */
+  --fs-xs:    0.75rem;    /* 12px */
+  --fs-sm:    0.875rem;   /* 14px */
+  --fs-base:  1rem;       /* 16px */
+  --fs-md:    1.125rem;   /* 18px */
+  --fs-lg:    1.25rem;    /* 20px */
+  --fs-xl:    1.5rem;     /* 24px */
+  --fs-2xl:   2rem;       /* 32px */
+  --fs-3xl:   2.5rem;     /* 40px */
+
+  /* ── Espaciado ── */
+  --space-xs:   0.25rem;    /* 4px */
+  --space-sm:   0.5rem;     /* 8px */
+  --space-md:   1rem;       /* 16px */
+  --space-lg:   1.5rem;     /* 24px */
+  --space-xl:   2rem;       /* 32px */
+  --space-2xl:  3rem;       /* 48px */
+  --space-3xl:  4rem;       /* 64px */
+
+  /* ── Bordes ── */
+  --radius-sm:  4px;
+  --radius-md:  8px;
+  --radius-lg:  16px;
+  --radius-xl:  24px;
+  --radius-full: 9999px;
+
+  /* ── Sombras ── */
+  --shadow-sm:  0 1px 3px rgba(61, 31, 13, 0.1);
+  --shadow-md:  0 4px 12px rgba(61, 31, 13, 0.15);
+  --shadow-lg:  0 8px 24px rgba(61, 31, 13, 0.2);
+
+  /* ── Transiciones ── */
+  --transition: all 0.3s ease;
+
+  /* ── Ancho máximo ── */
+  --max-width: 1280px;
+}
+
+/* =========================================
+   RESET BÁSICO
+   ========================================= */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-family: var(--font-cuerpo);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition);
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  font-family: var(--font-cuerpo);
+}
+
+/* =========================================
+   CLASES UTILITARIAS COMPARTIDAS
+   ========================================= */
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 var(--space-lg);
+}
+
+.section-title {
+  font-family: var(--font-titulo);
+  font-size: var(--fs-2xl);
+  color: var(--color-navbar);
+  text-align: center;
+  margin-bottom: var(--space-xl);
+  position: relative;
+}
+
+/* Línea decorativa dorada bajo los títulos */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--color-dorado);
+  margin: var(--space-sm) auto 0;
+  border-radius: var(--radius-full);
+}
+
+.btn-primary {
+  background-color: var(--color-marron);
+  color: #fff;
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-marron-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-marron);
+  border: 2px solid var(--color-marron);
+  padding: var(--space-sm) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-size: var(--fs-sm);
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-marron);
+  color: #fff;
+}
