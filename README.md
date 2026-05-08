@@ -8,16 +8,18 @@ Full-stack e-commerce for a handcraft boutique in Granada's Albaycín quarter. M
 
 | Layer    | Technologies |
 |----------|-------------|
-| Frontend | HTML, TypeScript, CSS, Javascript  |
-| Backend  | Django, TypeScript, PostgreSQL, Python |
+| Frontend | HTML, CSS, JavaScript, TypeScript |
+| Backend  | Node.js, Express, PostgreSQL |
 
 ---
 
-## Requisitos
+## Prerequisites
 
-- Node.js ≥ 18
-- PostgreSQL ≥ 14 running locally
-- npm ≥ 9
+| Tool | Version | Download |
+|------|---------|----------|
+| Node.js | ≥ 18 | https://nodejs.org (LTS) |
+| PostgreSQL | ≥ 14 | https://www.postgresql.org/download |
+| Git | latest | https://git-scm.com/downloads |
 
 ---
 
@@ -25,60 +27,97 @@ Full-stack e-commerce for a handcraft boutique in Granada's Albaycín quarter. M
 
 ### 1. Clone the repo
 
+**Mac / Linux:**
 ```bash
-git clone <your-repo-url>
-cd artisania-albaycin
+git clone https://github.com/ZakariaeBouhaba/artesania-albaicin.git
+cd artesania-albaicin
 ```
+
+**Windows (CMD / PowerShell / Git Bash):**
+```bash
+git clone https://github.com/ZakariaeBouhaba/artesania-albaicin.git
+cd artesania-albaicin
+```
+
+---
 
 ### 2. Backend
 
 ```bash
 cd backend
 npm install
-cp .env.example .env       
+cp .env.example .env
 ```
 
-**Generate JWT secrets:**
+> **Windows:** si `cp` ne fonctionne pas, utilise:
+> ```bash
+> copy .env.example .env
+> ```
+
+**Generate JWT secrets (run twice):**
+
 ```bash
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
-Run it twice — once for `JWT_ACCESS_SECRET`, once for `JWT_REFRESH_SECRET`.
+
+Paste the first output into `JWT_ACCESS_SECRET` and the second into `JWT_REFRESH_SECRET` inside `.env`.
 
 **Create the database and run migrations:**
+
 ```bash
-createdb artisania_albaycin   
+createdb artesania_albaicin
 npm run migrate
-npm run seed                  
+npm run seed
 ```
 
+> **Windows:** si `createdb` ne marche pas, ouvre **pgAdmin** et crée la base manuellement avec le nom `artesania_albaicin`.
+
 **Start the backend (port 3001):**
+
 ```bash
 npm run dev
 ```
 
+---
+
 ### 3. Frontend
 
+Ouvre un **nouveau terminal** :
+
 ```bash
-cd ../frontend
+cd frontend
 npm install
-cp .env.example .env       
-npm run dev                # starts on http://localhost:5173
+cp .env.example .env
+npm run dev
 ```
+
+> **Windows:**
+> ```bash
+> copy .env.example .env
+> ```
+
+Site disponible sur → **http://localhost:5173** 🚀
 
 ---
 
 ## Environment Variables
 
 ### `backend/.env`
+
 | Variable | Description |
 |----------|-------------|
 | `PORT` | API server port (default `3001`) |
-| `DB_HOST` / `DB_PORT` / `DB_NAME` / `DB_USER` / `DB_PASSWORD` | PostgreSQL connection |
+| `DB_HOST` | PostgreSQL host (default `localhost`) |
+| `DB_PORT` | PostgreSQL port (default `5432`) |
+| `DB_NAME` | Database name (`artesania_albaicin`) |
+| `DB_USER` | PostgreSQL username |
+| `DB_PASSWORD` | PostgreSQL password |
 | `JWT_ACCESS_SECRET` | 64-char hex secret for access tokens |
 | `JWT_REFRESH_SECRET` | 64-char hex secret for refresh tokens |
 | `FRONTEND_URL` | Allowed CORS origin (default `http://localhost:5173`) |
 
 ### `frontend/.env`
+
 | Variable | Description |
 |----------|-------------|
 | `VITE_API_URL` | Backend base URL (default `http://localhost:3001/api/v1`) |
@@ -89,12 +128,14 @@ npm run dev                # starts on http://localhost:5173
 ## Project Structure
 
 ```
-artisania-albaycin/
+artesania-albaicin/
 ├── backend/
 │   ├── src/
-│   │   ├── db/          # migrations, seed, pool
-│   │   ├── middleware/  # auth, validation, rate-limit
-│   │   ├── routes/      # products, auth, cart, orders
+│   │   ├── config/      # database config
+│   │   ├── db/          # migrations, seeds
+│   │   ├── middleware/  # auth, validation, rate-limit, error handler
+│   │   ├── modules/     # auth, cart, orders, products, users, categories
+│   │   ├── shared/      # errors, utils, types
 │   │   └── server.ts
 │   ├── .env.example
 │   └── package.json
@@ -106,8 +147,8 @@ artisania-albaycin/
     │   ├── data/        # catalog.ts (static product data)
     │   ├── hooks/       # useLocalCart, useWishlist
     │   ├── pages/       # public, auth, client, admin
-    │   ├── routes/      # AppRouter
-    │   ├── services/    # API calls (auth, cart, orders)
+    │   ├── routes/      # AppRouter, ProtectedRoute, RoleRoute
+    │   ├── services/    # API calls (auth, cart, orders, products)
     │   ├── store/       # Zustand auth + cart stores
     │   └── types/
     ├── .env.example
@@ -119,6 +160,7 @@ artisania-albaycin/
 ## Available Scripts
 
 ### Backend
+
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start dev server with hot reload |
@@ -129,6 +171,7 @@ artisania-albaycin/
 | `npm test` | Run Jest tests |
 
 ### Frontend
+
 | Command | Description |
 |---------|-------------|
 | `npm run dev` | Start Vite dev server |
