@@ -8,12 +8,12 @@ Full-stack e-commerce for a handcraft boutique in Granada's Albaycín quarter. M
 
 | Layer    | Technologies |
 |----------|-------------|
-| Frontend | React 18, Vite, TypeScript, Tailwind CSS, React Router, Zustand, React Query |
-| Backend  | Node.js, Express, TypeScript, PostgreSQL, JWT auth, Zod validation |
+| Frontend | HTML, TypeScript, CSS, Javascript  |
+| Backend  | Django, TypeScript, PostgreSQL, Python |
 
 ---
 
-## Prerequisites
+## Requisitos
 
 - Node.js ≥ 18
 - PostgreSQL ≥ 14 running locally
