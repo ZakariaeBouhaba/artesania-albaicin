@@ -123,37 +123,6 @@ Site disponible sur → **http://localhost:5173** 🚀
 | `VITE_API_URL` | Backend base URL (default `http://localhost:3001/api/v1`) |
 | `VITE_WHATSAPP_NUMBER` | WhatsApp number for order button (e.g. `34600000000`) |
 
----
-
-## Project Structure
-
-```
-artesania-albaicin/
-├── backend/
-│   ├── src/
-│   │   ├── config/      # database config
-│   │   ├── db/          # migrations, seeds
-│   │   ├── middleware/  # auth, validation, rate-limit, error handler
-│   │   ├── modules/     # auth, cart, orders, products, users, categories
-│   │   ├── shared/      # errors, utils, types
-│   │   └── server.ts
-│   ├── .env.example
-│   └── package.json
-└── frontend/
-    ├── src/
-    │   ├── assets/      # logo.png
-    │   ├── components/  # layout, home, product, cart, search, ui
-    │   ├── contexts/    # I18nContext (ES/EN)
-    │   ├── data/        # catalog.ts (static product data)
-    │   ├── hooks/       # useLocalCart, useWishlist
-    │   ├── pages/       # public, auth, client, admin
-    │   ├── routes/      # AppRouter, ProtectedRoute, RoleRoute
-    │   ├── services/    # API calls (auth, cart, orders, products)
-    │   ├── store/       # Zustand auth + cart stores
-    │   └── types/
-    ├── .env.example
-    └── package.json
-```
 
 ---
 
