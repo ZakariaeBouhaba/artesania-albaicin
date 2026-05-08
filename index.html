@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>header</title>
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/productos.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/contacto.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+
+<body>
+<header>
+    <div>
+        <a href="header.html">
+            <img src="img/Logo.png" alt="Logo">
+        </a>
+        
+        <div>
+            <div>
+                <h2>Ayuda</h2>
+                <div>
+                    <p>Teléfono</p>
+                    <p>Gmail</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <nav>
+        <a href="#">Ropa</a>
+        <a href="#">Bolsos</a>
+        <a href="#">Joyería</a>
+        <a href="#">Decoración</a>
+        <a href="#">Cerámica</a>
+        <a href="#">Souvenirs</a>
+        <a href="#">Perfumería</a>
+        <a href="#">Papelería</a>
+        <a href="#">Complementos</a>
+        <a href="#">Figuras</a>
+    </nav>
+</header>
+
+<main>
+    <section class="carrusel">
+ 
+        <button class="carrusel-btn prev" onclick="moverCarrusel(-1)">&#10094;</button>
+    
+        <div class="carrusel-wrapper">
+            <div class="carrusel-track" id="carruselTrack">
+    
+                <!-- SLIDE 1: cambia src por tu imagen -->
+                <div class="carrusel-slide">
+                    <img src="img/pollo.png" alt="Imagen 1">
+                </div>
+    
+                <!-- SLIDE 2: cambia src por tu imagen -->
+                <div class="carrusel-slide">
+                    <img src="img/pollo.png" alt="Imagen 2">
+                </div>
+    
+                <!-- SLIDE 3: cambia src por tu imagen -->
+                <div class="carrusel-slide">
+                    <img src="img/pollo.png" alt="Imagen 3">
+                </div>
+    
+                <!-- SLIDE 4: cambia src por tu imagen -->
+                <div class="carrusel-slide">
+                    <img src="img/pollo.png" alt="Imagen 4">
+                </div>
+    
+            </div>
+        </div>
+    
+        <button class="carrusel-btn next" onclick="moverCarrusel(1)">&#10095;</button>
+    
+        <div class="carrusel-dots">
+            <span class="dot activo" onclick="irASlide(0)"></span>
+            <span class="dot" onclick="irASlide(1)"></span>
+            <span class="dot" onclick="irASlide(2)"></span>
+            <span class="dot" onclick="irASlide(3)"></span>
+        </div>
+    
+    </section>
+</main>
+
+
+<footer>
+    <p>hola</p>
+</footer>
+
+<script src="js/carrusel.js"></script>
+</body>
+</html>

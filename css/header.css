@@ -1,0 +1,99 @@
+header {
+    background-color: #3D1F0D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1000;
+    font-family: sans-serif;
+}
+
+/* --- FILA SUPERIOR --- */
+header > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* Estilo Logo */
+.logo-link {
+    display: inline-block;
+    line-height: 0;
+}
+
+img {
+    display: block;
+    width: auto;
+    height: 60px;
+}
+
+/* Contenedor de Ayuda y Mi Cuenta */
+header > div > div {
+    display: flex;
+    gap: 40px;
+}
+
+header > div > div > div {
+    position: relative; /* Para que la ventana flote desde aquí */
+}
+
+h2 { color: #F5E6D3;
+    margin: 0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+
+/* --- VENTANA FLOTANTE (DROPDOWN) --- */
+header > div > div > div > div {
+    display: none;
+    position: absolute;
+    top: 100%; right: 0;
+    background: #F5E6D3;
+    padding: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    min-width: 160px;
+    z-index: 1001;
+}
+
+header > div > div > div > div p {
+    color: #333;
+    margin: 8px 0;
+    font-size: 0.9rem;
+}
+
+header > div > div > div > div a {
+    text-decoration: none;
+}
+
+/* Mostrar ventana al pasar el ratón */
+header > div > div > div:hover div {
+    display: block;
+}
+
+/* --- FILA INFERIOR (NAV) --- */
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 12px 0;
+    border-top: 1px solid #F5E6D3;
+}
+
+nav a {
+    color: #F5E6D3;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
