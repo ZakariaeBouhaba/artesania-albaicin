@@ -8,8 +8,8 @@ Full-stack e-commerce for a handcraft boutique in Granada's Albaycín quarter. M
 
 | Layer    | Technologies |
 |----------|-------------|
-| Frontend | HTML, CSS, JavaScript, TypeScript |
-| Backend  | Node.js, Express, PostgreSQL |
+| Frontend | HTML, CSS, JavaScript, React 18, TypeScript, TypeScript |
+| Backend  | Node.js, Express, TypeScript, PostgreSQL |
 
 ---
 
@@ -186,3 +186,4 @@ artesania-albaicin/
 - Cart and wishlist are persisted in **localStorage** (`aa_cart`, `aa_wish`).
 - Language preference (ES/EN) is stored in localStorage as `aa_lang`.
 - Admin panel is at `/admin` — requires a user with `role: admin` or `role: employee`.
+
