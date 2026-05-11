@@ -1,3 +1,12 @@
+:root {
+  --color-navbar:  #3D1F0D;
+  --color-dorado:  #D4A853;
+  --color-beige:   #F5E6D3;
+  --color-fondo:   #FAFAF8;
+  --color-marron:  #8B4513;
+  --color-texto:   #1A1A1A;
+}
+
 /* ============ CARRUSEL ============ */
 
 .carrusel {
