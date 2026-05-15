@@ -37,13 +37,13 @@
         <a href="productos.html?categoria=souvenirs">Souvenirs</a>
         <a href="productos.html?categoria=incienso">Perfumería</a>
         <a href="productos.html?categoria=libretas">Papelería</a>
-        <a href="productos.html?categoria=bolsos">Complementos</a>
-        <a href="productos.html?categoria=souvenirs">Figuras</a>
+        <a href="productos.html?categoria=te">Mundo del Té</a>
+        <a href="productos.html?categoria=iluminacion">Iluminación</a>
         <a href="productos.html?categoria=accesorios">Accesorios</a>
     </nav>
   </header>
 
-  <!-- HERO SECCIÓN PRODUCTOS -->
+  <!-- HERO -->
   <section class="productos-hero">
     <div class="productos-hero__content">
       <p class="productos-hero__subtitle">Artesanía del Albaicín</p>
@@ -68,28 +68,33 @@
             <button class="filtro-btn" data-categoria="ceramica">Cerámica</button>
             <button class="filtro-btn" data-categoria="te">Mundo del Té</button>
             <button class="filtro-btn" data-categoria="ropa">Ropa</button>
+            <button class="filtro-btn" data-categoria="accesorios">Accesorios</button>
             <button class="filtro-btn" data-categoria="incienso">Incienso y Perfumes</button>
             <button class="filtro-btn" data-categoria="libretas">Libretas</button>
             <button class="filtro-btn" data-categoria="souvenirs">Souvenirs</button>
             <button class="filtro-btn" data-categoria="decoracion">Decoración</button>
-            <button class="filtro-btn" data-categoria="accesorios">Accesorios</button>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- GRID DE PRODUCTOS -->
+    <!-- GRID -->
     <section class="productos-section">
       <div class="container">
-
+        <!-- BARRA DE BÚSQUEDA -->
+<div class="busqueda-wrapper">
+  <input type="text" id="busqueda" class="busqueda-input" placeholder="🔍 Buscar producto...">
+</div>
         <div class="productos-info">
-          <p class="productos-count"><span id="count">26</span> productos encontrados</p>
+          <p class="productos-count"><span id="count">0</span> productos encontrados</p>
         </div>
 
         <div class="productos-grid" id="productosGrid">
 
-          <!-- BOLSOS -->
-          <div class="producto-card" data-categoria="bolsos">
+          <!-- ══════════════════════════════════
+               BOLSOS Y MOCHILAS
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="bolsos" data-id="bolso-cuero" data-nombre="Bolso de Cuero Artesanal" data-precio="35,00 €" data-material="Cuero vaca" data-origen="Granada, España" data-desc="Bolso de cuero vaca con grabados tradicionales del Albaicín, hecho a mano por artesanos locales.">
             <div class="producto-card__img-wrapper">
               <img src="img/bolsos.jpg" alt="Bolso de cuero artesanal" class="producto-card__img">
               <span class="producto-card__badge">Artesanal</span>
@@ -97,15 +102,15 @@
             <div class="producto-card__info">
               <p class="producto-card__categoria">Bolsos y Mochilas</p>
               <h3 class="producto-card__nombre">Bolso de Cuero Artesanal</h3>
-              <p class="producto-card__desc">Bolso de cuero genuino con grabados tradicionales del Albaicín</p>
+              <p class="producto-card__desc">Bolso de cuero vaca genuino con grabados tradicionales del Albaicín</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">35,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="bolsos">
+          <div class="producto-card" data-categoria="bolsos" data-id="mochila-vintage" data-nombre="Mochila de Cuero Vintage" data-precio="55,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Mochila artesanal de cuero con cierre de hebilla y múltiples compartimentos, estilo vintage árabe.">
             <div class="producto-card__img-wrapper">
               <img src="img/mochilaaaaa.jpg" alt="Mochila de cuero vintage" class="producto-card__img">
               <span class="producto-card__badge nuevo">Nuevo</span>
@@ -116,14 +121,14 @@
               <p class="producto-card__desc">Mochila artesanal de cuero con cierre de hebilla y múltiples compartimentos</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">55,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="bolsos">
+          <div class="producto-card" data-categoria="bolsos" data-id="mochila-premium" data-nombre="Mochila Vintage Premium" data-precio="65,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Mochila de cuero marrón con detalles dorados y correas ajustables. Ideal para viajes y uso diario.">
             <div class="producto-card__img-wrapper">
-              <img src="img/mochilasvintage.avif" alt="Mochilas vintage cuero" class="producto-card__img">
+              <img src="img/mochilasvintage.avif" alt="Mochila vintage premium" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Bolsos y Mochilas</p>
@@ -131,13 +136,121 @@
               <p class="producto-card__desc">Mochila de cuero marrón con detalles dorados y correas ajustables</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">65,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- JOYERÍA -->
-          <div class="producto-card" data-categoria="joyeria">
+          <div class="producto-card" data-categoria="bolsos" data-id="bolso-tela" data-nombre="Bolso de Tela Bordado" data-precio="25,00 €" data-material="Tela bordada" data-origen="India" data-desc="Bolso de tela con bordados orientales de colores, ideal como regalo o souvenir.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/bolso-de-tela-granada.jpg" alt="Bolso de tela bordado" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Bolso de Tela Bordado</h3>
+              <p class="producto-card__desc">Bolso de tela con bordados orientales de colores</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">25,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="bolsos" data-id="bolso-fiesta" data-nombre="Bolso de Fiesta Dorado" data-precio="35,00 €" data-material="Metal dorado con bordados" data-origen="India" data-desc="Elegante bolso de fiesta dorado con diseño de limosnera, perfecto para ocasiones especiales.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/bolsos-de-fiesta-dorados-diseno-de-elegante-limosnera.jpg" alt="Bolso fiesta dorado" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Bolso de Fiesta Dorado</h3>
+              <p class="producto-card__desc">Elegante bolso de fiesta dorado con diseño de limosnera</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">35,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="bolsos" data-id="bolso-bordado" data-nombre="Bolso Redondo Bordado" data-precio="30,00 €" data-material="Tela bordada con lentejuelas" data-origen="India" data-desc="Bolso redondo con bordados de colores y lentejuelas, estilo oriental.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/bolso_bodas.jpg" alt="Bolso redondo bordado" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Bolso Redondo Bordado</h3>
+              <p class="producto-card__desc">Bolso redondo con bordados de colores y lentejuelas</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">30,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="bolsos" data-id="bolso-tachuelas" data-nombre="Bolso Cuero con Tachuelas" data-precio="45,00 €" data-material="cuero vaca genuino con tachuelas metálicas" data-origen="Marruecos" data-desc="Bolso de cuero artesanal decorado con tachuelas metálicas de estilo árabe.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/bolso_tachuelas.jpg" alt="Bolso cuero tachuelas" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Bolso Cuero con Tachuelas</h3>
+              <p class="producto-card__desc">Bolso de cuero artesanal decorado con tachuelas metálicas</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">45,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="bolsos" data-id="cartera-cuero" data-nombre="Cartera Marroquí de Cuero" data-precio="20,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Cartera marroquí de cuero natural con cierre de cremallera y múltiples compartimentos.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cartera-marroqui-de-cuero-natural-rif-varios-colores-decoracion-alcazaba-1_5000x.jpg" alt="Cartera marroquí" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Cartera Marroquí de Cuero</h3>
+              <p class="producto-card__desc">Cartera de cuero natural con cierre de cremallera</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">20,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="bolsos" data-id="monedero-cuero" data-nombre="Monedero Marroquí de Cuero" data-precio="10,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Monedero artesanal de cuero con diseños grabados árabes.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/monedero-marroqui-cuero-arabe_5000x.jpg" alt="Monedero marroquí" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Monedero Marroquí de Cuero</h3>
+              <p class="producto-card__desc">Monedero artesanal de cuero con diseños grabados árabes</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">10,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="bolsos" data-id="bolso-hippie" data-nombre="Bolso Hippie de Cuero" data-precio="40,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Bolso hippie de cuero con flecos y bordados coloridos, estilo boho-árabe.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/BOVN08-bolso-hippie-de-cuero--ff497d.jpg" alt="Bolso hippie cuero" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Bolsos y Mochilas</p>
+              <h3 class="producto-card__nombre">Bolso Hippie de Cuero</h3>
+              <p class="producto-card__desc">Bolso hippie de cuero con flecos y bordados coloridos</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">40,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               JOYERÍA
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="joyeria" data-id="pulsera-plata" data-nombre="Pulsera de Plata con Charms" data-precio="12,00 €" data-material="Plata" data-origen="España" data-desc="Pulsera artesanal de plata con colgantes de motivos árabes y andaluces.">
             <div class="producto-card__img-wrapper">
               <img src="img/pulseraplata.avif" alt="Pulsera de plata" class="producto-card__img">
               <span class="producto-card__badge">Popular</span>
@@ -148,12 +261,12 @@
               <p class="producto-card__desc">Pulsera artesanal de plata con colgantes de motivos árabes</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">12,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="joyeria">
+          <div class="producto-card" data-categoria="joyeria" data-id="pendientes-dorados" data-nombre="Pendientes Dorados Árabes" data-precio="8,00 €" data-material="Metal dorado" data-origen="España" data-desc="Pendientes con diseño arabesco en baño de oro, elegantes y ligeros.">
             <div class="producto-card__img-wrapper">
               <img src="img/pendientes.jpg" alt="Pendientes dorados" class="producto-card__img">
             </div>
@@ -163,12 +276,12 @@
               <p class="producto-card__desc">Pendientes con diseño arabesco en baño de oro</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">8,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="joyeria">
+          <div class="producto-card" data-categoria="joyeria" data-id="anillo-dorado" data-nombre="Anillo Dorado Oriental" data-precio="12,00 €" data-material="Acero inoxidable dorado" data-origen="España" data-desc="Anillo con piedras semipreciosas y motivos geométricos árabes, ajustable.">
             <div class="producto-card__img-wrapper">
               <img src="img/anillo-viceroy-mu.webp" alt="Anillo dorado" class="producto-card__img">
             </div>
@@ -178,13 +291,106 @@
               <p class="producto-card__desc">Anillo con piedras semipreciosas y motivos geométricos árabes</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">12,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- ILUMINACIÓN -->
-          <div class="producto-card" data-categoria="iluminacion">
+          <div class="producto-card" data-categoria="joyeria" data-id="anillo-estrellas" data-nombre="Anillo Ajustable de Estrellas" data-precio="8,00 €" data-material="Acero inoxidable" data-origen="España" data-desc="Anillo ajustable de acero inoxidable con diseño de estrellas árabes.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/Anillo-acero-inoxidable-ajustable-estrellas.jpg" alt="Anillo estrellas" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Joyería</p>
+              <h3 class="producto-card__nombre">Anillo Ajustable de Estrellas</h3>
+              <p class="producto-card__desc">Anillo ajustable de acero inoxidable con diseño de estrellas</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">8,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="joyeria" data-id="anillos-variados" data-nombre="Anillos Variados con Piedras" data-precio="10,00 €" data-material="Metal dorado con piedras" data-origen="España" data-desc="Colección de anillos dorados con piedras preciosas de colores, estilo oriental.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/anillos.jpg" alt="Anillos variados" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Joyería</p>
+              <h3 class="producto-card__nombre">Anillos Variados con Piedras</h3>
+              <p class="producto-card__desc">Colección de anillos dorados con piedras preciosas de colores</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">10,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="joyeria" data-id="pendientes-aro" data-nombre="Pendientes Aro Dorado Grande" data-precio="12,00 €" data-material="Metal dorado" data-origen="España" data-desc="Pendientes de aro dorado grande con diseño elegante, ideales para cualquier ocasión.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/pendientes-habana-aro-grueso-oro-800x800.jpg" alt="Pendientes aro dorado" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Joyería</p>
+              <h3 class="producto-card__nombre">Pendientes Aro Dorado Grande</h3>
+              <p class="producto-card__desc">Pendientes de aro dorado grande, elegantes y ligeros</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">12,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="joyeria" data-id="pulsera-charms" data-nombre="Pulsera Charm Plateada" data-precio="15,00 €" data-material="Plata y cristal" data-origen="España" data-desc="Pulsera charm con cuentas de cristal y colgantes de plata, diseño exclusivo.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/Pulsera-de-Charms-Siena-KFE2411-0090-2_7.jpg" alt="Pulsera charms" class="producto-card__img">
+              <span class="producto-card__badge nuevo">Nuevo</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Joyería</p>
+              <h3 class="producto-card__nombre">Pulsera Charm Plateada</h3>
+              <p class="producto-card__desc">Pulsera charm con cuentas de cristal y colgantes de plata</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">15,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="joyeria" data-id="collar-crisoprasa" data-nombre="Collar Dorado con Piedra" data-precio="18,00 €" data-material="Metal dorado y piedra natural" data-origen="España" data-desc="Collar dorado fino con colgante de piedra natural, diseño elegante y minimalista.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/collar-crisoprasa-oro-eden.jpg" alt="Collar dorado piedra" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Joyería</p>
+              <h3 class="producto-card__nombre">Collar Dorado con Piedra</h3>
+              <p class="producto-card__desc">Collar dorado fino con colgante de piedra natural</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">18,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="joyeria" data-id="pendiente-turquesa" data-nombre="Pendiente Círculo Turquesa" data-precio="10,00 €" data-material="Plata y turquesa" data-origen="España" data-desc="Pendiente de círculo en plata con piedra turquesa, diseño árabe tradicional.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/pendiente-circulo-turquesa-en-plata.jpg" alt="Pendiente turquesa" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Joyería</p>
+              <h3 class="producto-card__nombre">Pendiente Círculo Turquesa</h3>
+              <p class="producto-card__desc">Pendiente de círculo en plata con piedra turquesa</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">10,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               ILUMINACIÓN
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="iluminacion" data-id="farol-arabe" data-nombre="Farol Árabe de Metal" data-precio="18,00 €" data-material="Metal dorado" data-origen="Marruecos" data-desc="Farol de metal dorado con cristales de colores y diseño arabesco, perfecto para decoración.">
             <div class="producto-card__img-wrapper">
               <img src="img/farol.jfif" alt="Farol árabe" class="producto-card__img">
               <span class="producto-card__badge">Artesanal</span>
@@ -195,12 +401,12 @@
               <p class="producto-card__desc">Farol de metal dorado con cristales de colores y diseño arabesco</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">18,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="iluminacion">
+          <div class="producto-card" data-categoria="iluminacion" data-id="lampara-turca" data-nombre="Lámpara Turca de Mosaico" data-precio="35,00 €" data-material="Metal y cristal de mosaico" data-origen="Turquía" data-desc="Lámpara artesanal turca con mosaicos de cristal multicolor, hecha a mano por artesanos turcos.">
             <div class="producto-card__img-wrapper">
               <img src="img/lamparaturca.jpg" alt="Lámpara turca" class="producto-card__img">
               <span class="producto-card__badge nuevo">Nuevo</span>
@@ -211,14 +417,14 @@
               <p class="producto-card__desc">Lámpara artesanal turca con mosaicos de cristal multicolor</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">35,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="iluminacion">
+          <div class="producto-card" data-categoria="iluminacion" data-id="lampara-mesilla" data-nombre="Lámpara de Mesilla Árabe" data-precio="45,00 €" data-material="Cobre y cristal de mosaico" data-origen="Turquía" data-desc="Lámpara de sobremesa con base de cobre y pantalla de mosaico turco multicolor.">
             <div class="producto-card__img-wrapper">
-              <img src="img/lamparademesilladenoche.webp" alt="Lámpara de mesilla" class="producto-card__img">
+              <img src="img/lamparademesilladenoche.webp" alt="Lámpara mesilla" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Iluminación</p>
@@ -226,15 +432,79 @@
               <p class="producto-card__desc">Lámpara de sobremesa con base de cobre y pantalla de mosaico</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">45,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- CERÁMICA -->
-          <div class="producto-card" data-categoria="ceramica">
+          <div class="producto-card" data-categoria="iluminacion" data-id="farol-marroqui" data-nombre="Farol Marroquí de Colores" data-precio="22,00 €" data-material="Metal pintado y cristal" data-origen="Marruecos" data-desc="Farol marroquí con cristales de colores vivos, crea ambientes cálidos y acogedores.">
             <div class="producto-card__img-wrapper">
-              <img src="img/cuenco.webp" alt="Cuenco turco pintado" class="producto-card__img">
+              <img src="img/Farolio-marroqui-de-colores-2.jpg" alt="Farol marroquí colores" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Iluminación</p>
+              <h3 class="producto-card__nombre">Farol Marroquí de Colores</h3>
+              <p class="producto-card__desc">Farol marroquí con cristales de colores vivos</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">22,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="iluminacion" data-id="farol-alpaca" data-nombre="Farol Árabe de Alpaca" data-precio="28,00 €" data-material="Alpaca plateada" data-origen="Marruecos" data-desc="Farol árabe de alpaca plateada con grabados tradicionales, para uso interior o exterior.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/farol_arabe_de_alpaca.jpg" alt="Farol alpaca" class="producto-card__img">
+              <span class="producto-card__badge">Artesanal</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Iluminación</p>
+              <h3 class="producto-card__nombre">Farol Árabe de Alpaca</h3>
+              <p class="producto-card__desc">Farol árabe de alpaca plateada con grabados tradicionales</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">28,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="iluminacion" data-id="lampara-techo" data-nombre="Lámpara de Techo Marroquí" data-precio="65,00 €" data-material="Cobre" data-origen="Marruecos" data-desc="Lámpara de techo de cobre con diseños calados árabes, crea juegos de luz espectaculares.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/lampara-techo.jpg" alt="Lámpara techo marroquí" class="producto-card__img">
+              <span class="producto-card__badge nuevo">Nuevo</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Iluminación</p>
+              <h3 class="producto-card__nombre">Lámpara de Techo Marroquí</h3>
+              <p class="producto-card__desc">Lámpara de techo de cobre con diseños calados árabes</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">65,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="iluminacion" data-id="portavelas-turco" data-nombre="Portavelas Turco de Mosaico" data-precio="12,00 €" data-material="Metal y cristal de mosaico" data-origen="Turquía" data-desc="Portavelas turco con cristales de mosaico multicolor, ideal para decoración de ambientes.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/portavelas-turco-estrella-multicolor_5000x.jpg" alt="Portavelas turco" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Iluminación</p>
+              <h3 class="producto-card__nombre">Portavelas Turco de Mosaico</h3>
+              <p class="producto-card__desc">Portavelas turco con cristales de mosaico multicolor</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">12,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               CERÁMICA
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="ceramica" data-id="cuenco-turco" data-nombre="Cuenco Turco Pintado" data-precio="6,00 €" data-material="Cerámica pintada a mano" data-origen="Turquía" data-desc="Cuenco de cerámica pintado a mano con motivos florales orientales por artesanos turcos.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cuenco.webp" alt="Cuenco turco" class="producto-card__img">
               <span class="producto-card__badge">Popular</span>
             </div>
             <div class="producto-card__info">
@@ -243,14 +513,14 @@
               <p class="producto-card__desc">Cuenco de cerámica pintado a mano con motivos florales orientales</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">6,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="ceramica">
+          <div class="producto-card" data-categoria="ceramica" data-id="reposacucharas" data-nombre="Reposacucharas Decorado" data-precio="4,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Reposacucharas de cerámica con motivos de azulejo andaluz, hecho en Granada.">
             <div class="producto-card__img-wrapper">
-              <img src="img/cuchara.jpg" alt="Reposacucharas decorado" class="producto-card__img">
+              <img src="img/cuchara.jpg" alt="Reposacucharas" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Cerámica</p>
@@ -258,14 +528,14 @@
               <p class="producto-card__desc">Reposacucharas de cerámica con motivos de azulejo andaluz</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">4,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="ceramica">
+          <div class="producto-card" data-categoria="ceramica" data-id="cenicero" data-nombre="Cenicero de Cerámica Granada" data-precio="9,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Cenicero decorado con motivos de la Alhambra y diseños nazaríes.">
             <div class="producto-card__img-wrapper">
-              <img src="img/cineseros.jpg" alt="Cenicero de cerámica" class="producto-card__img">
+              <img src="img/cineseros.jpg" alt="Cenicero cerámica" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Cerámica</p>
@@ -273,15 +543,124 @@
               <p class="producto-card__desc">Cenicero decorado con motivos de la Alhambra</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">9,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- MUNDO DEL TÉ -->
-          <div class="producto-card" data-categoria="te">
+          <div class="producto-card" data-categoria="ceramica" data-id="taza-ceramica" data-nombre="Taza de Cerámica con Mosaico" data-precio="6,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Taza de cerámica decorada con diseños de mosaico árabe-andaluz.">
             <div class="producto-card__img-wrapper">
-              <img src="img/teterajaponesa.jpg" alt="Tetera japonesa" class="producto-card__img">
+              <img src="img/taza_ceramica_mosaico.jpg" alt="Taza cerámica mosaico" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Taza de Cerámica con Mosaico</h3>
+              <p class="producto-card__desc">Taza de cerámica decorada con diseños de mosaico árabe-andaluz</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">6,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ceramica" data-id="taza-granada" data-nombre="Taza Souvenir Granada" data-precio="5,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Taza souvenir con vistas de Granada y la Alhambra, recuerdo perfecto de la ciudad.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/mug-con-cuchara-granada-y-la-alhambra.jpg" alt="Taza souvenir Granada" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Taza Souvenir Granada</h3>
+              <p class="producto-card__desc">Taza souvenir con vistas de Granada y la Alhambra</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">5,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ceramica" data-id="plato-decorativo" data-nombre="Plato Decorativo Alhambra" data-precio="10,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Plato decorativo de cerámica con diseño de la Alhambra, ideal para colgar en la pared.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/ceramica-espanola-espanola-plato-alhambra-de-granada.jpg" alt="Plato decorativo Alhambra" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Plato Decorativo Alhambra</h3>
+              <p class="producto-card__desc">Plato decorativo de cerámica con diseño de la Alhambra</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">10,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ceramica" data-id="cuenco-alpaca" data-nombre="Cuenco Marroquí de Alpaca" data-precio="15,00 €" data-material="Cerámica y alpaca" data-origen="Marruecos" data-desc="Cuenco marroquí combinado con borde de alpaca plateada grabada.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cuenco-marroqui-de-ceramica-y-alpaca-mini-decoracion-alcazaba-3_5000x.jpg" alt="Cuenco alpaca" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Cuenco Marroquí de Alpaca</h3>
+              <p class="producto-card__desc">Cuenco marroquí combinado con borde de alpaca plateada grabada</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">15,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ceramica" data-id="posavasos" data-nombre="Posavasos Decorados" data-precio="7,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Set de 6 posavasos de cerámica con diseños de azulejo andaluz.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/posavaso.webp" alt="Posavasos decorados" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Posavasos Decorados</h3>
+              <p class="producto-card__desc">Set de 6 posavasos de cerámica con diseños de azulejo andaluz</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">7,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ceramica" data-id="aceitera" data-nombre="Aceitera de Cerámica Granada" data-precio="10,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Aceitera artesanal de cerámica con motivos de la Alhambra, capacidad 250ml.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/botella-aceitera.jpg" alt="Aceitera cerámica" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Aceitera de Cerámica Granada</h3>
+              <p class="producto-card__desc">Aceitera artesanal de cerámica con motivos de la Alhambra</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">10,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ceramica" data-id="taza-filtro" data-nombre="Taza con Filtro de Té Arabesco" data-precio="8,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Taza de cerámica con filtro de té integrado y diseño arabesco, perfecta para los amantes del té.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/taza-con-filtro-de-te-arabesco-.jpg" alt="Taza filtro té" class="producto-card__img">
+              <span class="producto-card__badge nuevo">Nuevo</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Cerámica</p>
+              <h3 class="producto-card__nombre">Taza con Filtro de Té Arabesco</h3>
+              <p class="producto-card__desc">Taza de cerámica con filtro de té integrado y diseño arabesco</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">8,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               MUNDO DEL TÉ
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="te" data-id="tetera-hierro" data-nombre="Tetera de Hierro Fundido" data-precio="28,00 €" data-material="Hierro fundido" data-origen="Japón" data-desc="Tetera tradicional de hierro fundido con filtro incluido, conserva el calor durante horas.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/teterajaponesa.jpg" alt="Tetera hierro fundido" class="producto-card__img">
               <span class="producto-card__badge">Artesanal</span>
             </div>
             <div class="producto-card__info">
@@ -290,28 +669,28 @@
               <p class="producto-card__desc">Tetera tradicional de hierro fundido con filtro incluido</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">28,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="te">
+          <div class="producto-card" data-categoria="te" data-id="juego-te" data-nombre="Juego de Té Marroquí Completo" data-precio="42,00 €" data-material="Alpaca plateada y cristal" data-origen="Marruecos" data-desc="Set completo con tetera plateada, bandeja y 6 vasos de cristal de colores, tradicional marroquí.">
             <div class="producto-card__img-wrapper">
               <img src="img/juego-de-te.jpg" alt="Juego de té marroquí" class="producto-card__img">
               <span class="producto-card__badge nuevo">Nuevo</span>
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Mundo del Té</p>
-              <h3 class="producto-card__nombre">Juego de Té Marroquí</h3>
+              <h3 class="producto-card__nombre">Juego de Té Marroquí Completo</h3>
               <p class="producto-card__desc">Set completo con tetera plateada, bandeja y 6 vasos de cristal de colores</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">42,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="te">
+          <div class="producto-card" data-categoria="te" data-id="vasos-te" data-nombre="Vasos de Té Orientales" data-precio="15,00 €" data-material="Cristal pintado" data-origen="Marruecos" data-desc="Set de 6 vasos de cristal pintados con motivos dorados, para disfrutar del té a la manera árabe.">
             <div class="producto-card__img-wrapper">
               <img src="img/vaso.webp" alt="Vasos de té" class="producto-card__img">
             </div>
@@ -321,13 +700,110 @@
               <p class="producto-card__desc">Set de 6 vasos de cristal pintados con motivos dorados</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">15,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- ROPA -->
-          <div class="producto-card" data-categoria="accesorios">
+          <div class="producto-card" data-categoria="te" data-id="tetera-alpaca" data-nombre="Tetera Árabe de Alpaca" data-precio="35,00 €" data-material="Alpaca plateada grabada" data-origen="Marruecos" data-desc="Tetera árabe de alpaca plateada con grabados tradicionales, 2 litros de capacidad.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/tetera-arabe-alpaca-barze_5000x.jpg" alt="Tetera alpaca" class="producto-card__img">
+              <span class="producto-card__badge">Artesanal</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Mundo del Té</p>
+              <h3 class="producto-card__nombre">Tetera Árabe de Alpaca</h3>
+              <p class="producto-card__desc">Tetera árabe de alpaca plateada con grabados tradicionales, 2L</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">35,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="te" data-id="bandeja-alpaca" data-nombre="Bandeja Marroquí de Alpaca" data-precio="25,00 €" data-material="Alpaca plateada" data-origen="Marruecos" data-desc="Bandeja marroquí de alpaca plateada con grabados tradicionales, perfecta para servir el té.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/bandeja-marroqui-de-alpaca-te.jpg" alt="Bandeja alpaca" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Mundo del Té</p>
+              <h3 class="producto-card__nombre">Bandeja Marroquí de Alpaca</h3>
+              <p class="producto-card__desc">Bandeja marroquí de alpaca plateada con grabados tradicionales</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">25,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="te" data-id="vasos-hamsa" data-nombre="Vasos de Té Mano de Fátima" data-precio="18,00 €" data-material="Cristal pintado" data-origen="Marruecos" data-desc="Set de vasos de té con diseño de la Mano de Fátima, símbolo de protección árabe.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/vasos-de-te-moruno-mano-de-fatima-decoracion-alcazaba-1_5000x.jpg" alt="Vasos mano de Fátima" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Mundo del Té</p>
+              <h3 class="producto-card__nombre">Vasos de Té Mano de Fátima</h3>
+              <p class="producto-card__desc">Set de vasos con diseño de la Mano de Fátima</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">18,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               ROPA
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="ropa" data-id="vestido-boho" data-nombre="Vestido Boho de Colores" data-precio="45,00 €" data-material="Algodón" data-origen="India" data-desc="Vestido boho de algodón con estampado de paisley multicolor, estilo hippie-árabe.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/vestido_boho.jpg" alt="Vestido boho" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Ropa</p>
+              <h3 class="producto-card__nombre">Vestido Boho de Colores</h3>
+              <p class="producto-card__desc">Vestido boho de algodón con estampado de paisley multicolor</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">45,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ropa" data-id="vestido-largo" data-nombre="Vestido Largo Boho" data-precio="55,00 €" data-material="Algodón y seda" data-origen="India" data-desc="Vestido largo boho con detalles de encaje y bordados dorados, elegante y cómodo.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/vestido_largo_boho.jpg" alt="Vestido largo boho" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Ropa</p>
+              <h3 class="producto-card__nombre">Vestido Largo Boho</h3>
+              <p class="producto-card__desc">Vestido largo boho con detalles de encaje y bordados dorados</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">55,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="ropa" data-id="falda-boho" data-nombre="Falda Larga Boho" data-precio="35,00 €" data-material="Algodón" data-origen="India" data-desc="Falda larga boho con estampado de paisley y volantes, ideal para el verano.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/faldas.jpg" alt="Falda larga boho" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Ropa</p>
+              <h3 class="producto-card__nombre">Falda Larga Boho</h3>
+              <p class="producto-card__desc">Falda larga boho con estampado de paisley y volantes</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">35,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               ACCESORIOS
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="accesorios" data-id="abanico" data-nombre="Abanico Español Floral" data-precio="10,00 €" data-material="Madera y tela" data-origen="España" data-desc="Abanico tradicional español pintado a mano con flores, hecho por artesanos españoles.">
             <div class="producto-card__img-wrapper">
               <img src="img/abanico.avif" alt="Abanico español" class="producto-card__img">
               <span class="producto-card__badge">Popular</span>
@@ -338,30 +814,124 @@
               <p class="producto-card__desc">Abanico tradicional español pintado a mano con flores</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">10,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- INCIENSO Y PERFUMES -->
-          <div class="producto-card" data-categoria="incienso">
+          <div class="producto-card" data-categoria="accesorios" data-id="abanico-personalizado" data-nombre="Abanico Personalizado Madera" data-precio="18,00 €" data-material="Madera y encaje" data-origen="España" data-desc="Abanico de madera con encaje artesanal, disponible en varios colores y diseños.">
             <div class="producto-card__img-wrapper">
-              <img src="img/incienso.jpg" alt="Incienso" class="producto-card__img">
+              <img src="img/abanico-personalizado-para-regalo.jpg" alt="Abanico personalizado" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Accesorios</p>
+              <h3 class="producto-card__nombre">Abanico Personalizado Madera</h3>
+              <p class="producto-card__desc">Abanico de madera con encaje artesanal, varios colores</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">18,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="accesorios" data-id="babuchas-rosa" data-nombre="Babuchas Marroquíes Rosa" data-precio="22,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Babuchas marroquíes de cuero vaca genuino en color rosa con bordados tradicionales.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/babuchas-de-mujer-marroquies-rosa.jpg" alt="Babuchas rosa" class="producto-card__img">
+              <span class="producto-card__badge">Artesanal</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Accesorios</p>
+              <h3 class="producto-card__nombre">Babuchas Marroquíes Rosa</h3>
+              <p class="producto-card__desc">Babuchas marroquíes de cuero vaca genuino con bordados tradicionales</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">22,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="accesorios" data-id="babuchas-amarillas" data-nombre="Babuchas Bereberes Amarillas" data-precio="22,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Babuchas de cuero con dibujos bereberes en amarillo, cómodas y artesanales.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/babuchas-pantuflas-de-mujer-marroquies-amarillo-dibujos-etnicos-bereberes.jpg" alt="Babuchas amarillas" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Accesorios</p>
+              <h3 class="producto-card__nombre">Babuchas Bereberes Amarillas</h3>
+              <p class="producto-card__desc">Babuchas de cuero con dibujos bereberes, cómodas y artesanales</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">22,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="accesorios" data-id="cinturon-cuero" data-nombre="Cinturón de Cuero Natural" data-precio="15,00 €" data-material="cuero vaca genuino" data-origen="Marruecos" data-desc="Cinturón artesanal de cuero natural con hebilla de metal, varios colores disponibles.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cinturon-de-cuero-natural-marron-claro-decoracion-alcazaba-1_5000x.jpg" alt="Cinturón cuero" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Accesorios</p>
+              <h3 class="producto-card__nombre">Cinturón de Cuero Natural</h3>
+              <p class="producto-card__desc">Cinturón artesanal de cuero natural, varios colores disponibles</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">15,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+          <div class="producto-card" data-categoria="accesorios" data-id="abanico-artesano" data-nombre="Abanico Artesano Español" data-precio="15,00 €" data-material="Madera y tela" data-origen="España" data-desc="Abanico artesano español de madera con varillas talladas y tela decorada.">
+  <div class="producto-card__img-wrapper">
+    <img src="img/abanicos-madrid-artesanos-españoles.jpeg" alt="Abanico artesano" class="producto-card__img">
+    <span class="producto-card__badge">Artesanal</span>
+  </div>
+  <div class="producto-card__info">
+    <p class="producto-card__categoria">Accesorios</p>
+    <h3 class="producto-card__nombre">Abanico Artesano Español</h3>
+    <p class="producto-card__desc">Abanico artesano de madera con varillas talladas y tela decorada</p>
+    <div class="producto-card__footer">
+      <span class="producto-card__precio">15,00 €</span>
+      <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+    </div>
+  </div>
+</div>
+
+<div class="producto-card" data-categoria="accesorios" data-id="abanico-rojo" data-nombre="Abanico Rojo Flamenco" data-precio="12,00 €" data-material="Madera y tela" data-origen="España" data-desc="Abanico rojo flamenco con detalles dorados, ideal para baile o decoración.">
+  <div class="producto-card__img-wrapper">
+    <img src="img/1166-abanico-rojo-con-detalles.jpg" alt="Abanico rojo flamenco" class="producto-card__img">
+    <span class="producto-card__badge">Popular</span>
+  </div>
+  <div class="producto-card__info">
+    <p class="producto-card__categoria">Accesorios</p>
+    <h3 class="producto-card__nombre">Abanico Rojo Flamenco</h3>
+    <p class="producto-card__desc">Abanico rojo flamenco con detalles dorados</p>
+    <div class="producto-card__footer">
+      <span class="producto-card__precio">12,00 €</span>
+      <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+    </div>
+  </div>
+</div>
+
+          <!-- ══════════════════════════════════
+               INCIENSO Y PERFUMES
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="incienso" data-id="incienso-soporte" data-nombre="Incienso con Soporte de Madera" data-precio="5,00 €" data-material="Varillas naturales y madera" data-origen="India" data-desc="Pack de incienso con soporte de madera torre, varios aromas disponibles: rosa, jazmín, sándalo.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/incienso.jpg" alt="Incienso soporte" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Incienso y Perfumes</p>
-              <h3 class="producto-card__nombre">Incienso Aromático con Soporte</h3>
-              <p class="producto-card__desc">Pack de incienso con soporte de madera, varios aromas disponibles</p>
+              <h3 class="producto-card__nombre">Incienso con Soporte de Madera</h3>
+              <p class="producto-card__desc">Pack de incienso con soporte de madera, varios aromas</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">5,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="incienso">
+          <div class="producto-card" data-categoria="incienso" data-id="perfume-arabe" data-nombre="Perfume Árabe Oriental" data-precio="18,00 €" data-material="Fragancia oriental" data-origen="Emiratos Árabes" data-desc="Perfume árabe con fragancia de oud, rosa y sándalo, larga duración.">
             <div class="producto-card__img-wrapper">
-              <img src="img/perfumeria.png" alt="Perfumes árabes" class="producto-card__img">
+              <img src="img/perfumeria.png" alt="Perfume árabe" class="producto-card__img">
               <span class="producto-card__badge nuevo">Nuevo</span>
             </div>
             <div class="producto-card__info">
@@ -370,44 +940,92 @@
               <p class="producto-card__desc">Perfume árabe con fragancia de oud, rosa y sándalo</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">18,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="incienso">
+          <div class="producto-card" data-categoria="incienso" data-id="perfume-lattafa" data-nombre="Perfume Lattafa Asad Elixir" data-precio="35,00 €" data-material="Eau de Parfum 100ml" data-origen="Emiratos Árabes" data-desc="Perfume árabe Lattafa Asad Elixir, fragancia masculina de larga duración con notas de oud y madera.">
             <div class="producto-card__img-wrapper">
-              <img src="img/pintalabios.png" alt="Cosmética árabe" class="producto-card__img">
+              <img src="img/asad.jpg" alt="Perfume Lattafa" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Incienso y Perfumes</p>
-              <h3 class="producto-card__nombre">Cosmética Árabe Natural</h3>
-              <p class="producto-card__desc">Productos de cosmética natural con ingredientes tradicionales árabes</p>
+              <h3 class="producto-card__nombre">Perfume Lattafa Asad Elixir</h3>
+              <p class="producto-card__desc">Perfume árabe masculino con notas de oud y madera, 100ml</p>
               <div class="producto-card__footer">
-                <span class="producto-card__precio">8,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <span class="producto-card__precio">35,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- LIBRETAS -->
-          <div class="producto-card" data-categoria="libretas">
+          <div class="producto-card" data-categoria="incienso" data-id="pintalabios" data-nombre="Pintalabios Árabe Tradicional" data-precio="8,00 €" data-material="Ingredientes naturales" data-origen="Marruecos" data-desc="Pintalabios bereber tradicional de labial mágico, hecho con ingredientes 100% naturales.">
             <div class="producto-card__img-wrapper">
-              <img src="img/cuaderno.webp" alt="Libreta artesanal" class="producto-card__img">
+              <img src="img/pintalabios.png" alt="Pintalabios árabe" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Incienso y Perfumes</p>
+              <h3 class="producto-card__nombre">Pintalabios Árabe Tradicional</h3>
+              <p class="producto-card__desc">Pintalabios bereber tradicional, ingredientes 100% naturales</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">8,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="incienso" data-id="kohl" data-nombre="Kohl Árabe Natural" data-precio="6,00 €" data-material="Kohl 100% natural" data-origen="Marruecos" data-desc="Delineador de ojos tradicional árabe, kohl natural 100% sin químicos, protege y embellece.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/khol-hashmi-aswad_5000x.jpg" alt="Kohl árabe" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Incienso y Perfumes</p>
+              <h3 class="producto-card__nombre">Kohl Árabe Natural</h3>
+              <p class="producto-card__desc">Delineador de ojos tradicional árabe, kohl 100% natural</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">6,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="incienso" data-id="pack-incienso" data-nombre="Pack Incienso Árbol de la Vida" data-precio="6,00 €" data-material="Varillas naturales" data-origen="India" data-desc="Pack de 56 varillas de incienso árbol de la vida con 4 aromas diferentes.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/pack-incienso-arbol-de-la-vida-4-aromas-56-varillas.jpg" alt="Pack incienso" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Incienso y Perfumes</p>
+              <h3 class="producto-card__nombre">Pack Incienso Árbol de la Vida</h3>
+              <p class="producto-card__desc">56 varillas de incienso con 4 aromas diferentes</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">6,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               LIBRETAS
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="libretas" data-id="libreta-mosaico" data-nombre="Libreta con Diseño Mosaico" data-precio="5,00 €" data-material="Tela y papel" data-origen="Granada, España" data-desc="Libreta con tapa de tela con diseño de mosaico árabe, 200 páginas rayadas.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cuaderno.webp" alt="Libreta mosaico" class="producto-card__img">
               <span class="producto-card__badge">Popular</span>
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Libretas</p>
-              <h3 class="producto-card__nombre">Libreta Artesanal Decorada</h3>
+              <h3 class="producto-card__nombre">Libreta con Diseño Mosaico</h3>
               <p class="producto-card__desc">Libreta con tapa de tela con diseño de mosaico árabe</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">5,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="libretas">
+          <div class="producto-card" data-categoria="libretas" data-id="cuaderno-oriental" data-nombre="Cuaderno Oriental Premium" data-precio="7,00 €" data-material="Tela y papel reciclado" data-origen="Granada, España" data-desc="Cuaderno de lujo con tapa dura y páginas de papel reciclado, diseño oriental.">
             <div class="producto-card__img-wrapper">
               <img src="img/cuaderno2.avif" alt="Cuaderno oriental" class="producto-card__img">
             </div>
@@ -417,30 +1035,63 @@
               <p class="producto-card__desc">Cuaderno de lujo con tapa dura y páginas de papel reciclado</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">7,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- SOUVENIRS -->
-          <div class="producto-card" data-categoria="souvenirs">
+          <div class="producto-card" data-categoria="libretas" data-id="cuaderno-cuero" data-nombre="Cuaderno de Cuero Artesanal" data-precio="12,00 €" data-material="Cuero y papel" data-origen="Marruecos" data-desc="Cuaderno con tapa de cuero artesanal, ideal para escribir o dibujar.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cuaderno_cuero.jpg" alt="Cuaderno cuero" class="producto-card__img">
+              <span class="producto-card__badge">Artesanal</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Libretas</p>
+              <h3 class="producto-card__nombre">Cuaderno de Cuero Artesanal</h3>
+              <p class="producto-card__desc">Cuaderno con tapa de cuero artesanal, ideal para escribir o dibujar</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">12,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="libretas" data-id="libreta-mosaico2" data-nombre="Libreta Pequeña de Mosaico" data-precio="4,00 €" data-material="Cartón y papel" data-origen="Granada, España" data-desc="Libreta pequeña de bolsillo con diseño de mosaico árabe, perfecta para notas.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/cuaderno_mosaico.jpg" alt="Libreta mosaico pequeña" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Libretas</p>
+              <h3 class="producto-card__nombre">Libreta Pequeña de Mosaico</h3>
+              <p class="producto-card__desc">Libreta pequeña de bolsillo con diseño de mosaico árabe</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">4,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               SOUVENIRS
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="souvenirs" data-id="iman-granada" data-nombre="Imán de Granada" data-precio="3,00 €" data-material="Resina y cerámica" data-origen="Granada, España" data-desc="Imán decorativo con imagen de la Alhambra y la ciudad de Granada.">
             <div class="producto-card__img-wrapper">
               <img src="img/iman.jpg" alt="Imán de Granada" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Souvenirs</p>
               <h3 class="producto-card__nombre">Imán de Granada</h3>
-              <p class="producto-card__desc">Imán decorativo con imagen de la Alhambra y la ciudad de Granada</p>
+              <p class="producto-card__desc">Imán decorativo con imagen de la Alhambra y Granada</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">3,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="souvenirs">
+          <div class="producto-card" data-categoria="souvenirs" data-id="figura-granada" data-nombre="Figura Decorativa Granada" data-precio="8,00 €" data-material="Cerámica pintada" data-origen="Granada, España" data-desc="Figura cerámica en forma de granada, símbolo de la ciudad, pintada a mano.">
             <div class="producto-card__img-wrapper">
-              <img src="img/granadas.jpg" alt="Figuras de granada" class="producto-card__img">
+              <img src="img/granadas.jpg" alt="Figura granada" class="producto-card__img">
               <span class="producto-card__badge">Popular</span>
             </div>
             <div class="producto-card__info">
@@ -449,13 +1100,61 @@
               <p class="producto-card__desc">Figura cerámica en forma de granada, símbolo de la ciudad</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">8,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <!-- DECORACIÓN -->
-          <div class="producto-card" data-categoria="decoracion">
+          <div class="producto-card" data-categoria="souvenirs" data-id="iman-mosaico" data-nombre="Imán Mosaico Alhambra" data-precio="4,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Imán con diseño de mosaico de la Alhambra, recuerdo perfecto de Granada.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/iman-figuras-granada-y-la-alhambra-mosaico-alhambra.jpg" alt="Imán mosaico" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Souvenirs</p>
+              <h3 class="producto-card__nombre">Imán Mosaico Alhambra</h3>
+              <p class="producto-card__desc">Imán con diseño de mosaico de la Alhambra</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">4,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="souvenirs" data-id="postal-alhambra" data-nombre="Postal de la Alhambra" data-precio="1,50 €" data-material="Papel fotográfico" data-origen="Granada, España" data-desc="Postal con fotografía de la Alhambra de Granada, ideal para enviar a familia y amigos.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/postal.jpg" alt="Postal Alhambra" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Souvenirs</p>
+              <h3 class="producto-card__nombre">Postal de la Alhambra</h3>
+              <p class="producto-card__desc">Postal con fotografía de la Alhambra de Granada</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">1,50 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="souvenirs" data-id="miniatura-alhambra" data-nombre="Miniatura de la Alhambra" data-precio="15,00 €" data-material="Resina pintada" data-origen="Granada, España" data-desc="Miniatura detallada de la Alhambra de Granada, perfecta como recuerdo o decoración.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/miniaturas_alhambra.jpg" alt="Miniatura Alhambra" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Souvenirs</p>
+              <h3 class="producto-card__nombre">Miniatura de la Alhambra</h3>
+              <p class="producto-card__desc">Miniatura detallada de la Alhambra, perfecta como recuerdo</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">15,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ══════════════════════════════════
+               DECORACIÓN
+          ══════════════════════════════════ -->
+          <div class="producto-card" data-categoria="decoracion" data-id="espejo-arabe" data-nombre="Espejo Árabe Decorativo" data-precio="25,00 €" data-material="Alpaca grabada" data-origen="Marruecos" data-desc="Espejo con marco de alpaca grabada con motivos andaluces, para colgar en pared.">
             <div class="producto-card__img-wrapper">
               <img src="img/espejoarabe.webp" alt="Espejo árabe" class="producto-card__img">
               <span class="producto-card__badge">Artesanal</span>
@@ -466,14 +1165,14 @@
               <p class="producto-card__desc">Espejo con marco de alpaca grabada con motivos andaluces</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">25,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="decoracion">
+          <div class="producto-card" data-categoria="decoracion" data-id="mesa-alpaca" data-nombre="Mesa Árabe de Alpaca" data-precio="45,00 €" data-material="Alpaca dorada" data-origen="Marruecos" data-desc="Mesa auxiliar con grabados tradicionales en alpaca dorada, diseño octogonal árabe.">
             <div class="producto-card__img-wrapper">
-              <img src="img/mesaarabedealpaca.avif" alt="Mesa árabe de alpaca" class="producto-card__img">
+              <img src="img/mesaarabedealpaca.avif" alt="Mesa árabe alpaca" class="producto-card__img">
               <span class="producto-card__badge nuevo">Nuevo</span>
             </div>
             <div class="producto-card__info">
@@ -482,37 +1181,115 @@
               <p class="producto-card__desc">Mesa auxiliar con grabados tradicionales en alpaca dorada</p>
               <div class="producto-card__footer">
                 <span class="producto-card__precio">45,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="decoracion">
+          <div class="producto-card" data-categoria="decoracion" data-id="cajonera-pintada" data-nombre="Cajonera de Madera Pintada" data-precio="35,00 €" data-material="Madera pintada a mano" data-origen="India" data-desc="Cajonera de madera pintada a mano con colores vivos, perfecta para organizar joyas o especias.">
             <div class="producto-card__img-wrapper">
-              <img src="img/posavaso.webp" alt="Posavasos decorados" class="producto-card__img">
+              <img src="img/cajoneras_pintadas.jfif" alt="Cajonera pintada" class="producto-card__img">
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Decoración</p>
-              <h3 class="producto-card__nombre">Posavasos Decorados</h3>
-              <p class="producto-card__desc">Set de 6 posavasos de cerámica con diseños de azulejo</p>
+              <h3 class="producto-card__nombre">Cajonera de Madera Pintada</h3>
+              <p class="producto-card__desc">Cajonera pintada a mano con colores vivos</p>
               <div class="producto-card__footer">
-                <span class="producto-card__precio">7,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <span class="producto-card__precio">35,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
 
-          <div class="producto-card" data-categoria="decoracion">
+          <div class="producto-card" data-categoria="decoracion" data-id="cajonera-azul" data-nombre="Cajonera con Cajones de Cerámica" data-precio="28,00 €" data-material="Madera y cerámica" data-origen="India" data-desc="Cajonera de madera con cajones decorados con azulejos de cerámica azul y blanco.">
             <div class="producto-card__img-wrapper">
-              <img src="img/botella-aceitera.jpg" alt="Aceitera de cerámica" class="producto-card__img">
+              <img src="img/cajoneras_azul.jpg" alt="Cajonera cerámica azul" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
             </div>
             <div class="producto-card__info">
               <p class="producto-card__categoria">Decoración</p>
-              <h3 class="producto-card__nombre">Aceitera de Cerámica Granada</h3>
-              <p class="producto-card__desc">Aceitera artesanal de cerámica con motivos de la Alhambra</p>
+              <h3 class="producto-card__nombre">Cajonera con Cajones de Cerámica</h3>
+              <p class="producto-card__desc">Cajonera de madera con cajones de cerámica azul y blanco</p>
               <div class="producto-card__footer">
-                <span class="producto-card__precio">10,00 €</span>
-                <button class="producto-card__btn">Ver más</button>
+                <span class="producto-card__precio">28,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="decoracion" data-id="marco-fotos" data-nombre="Marco de Fotos con Mosaico" data-precio="4,00 €" data-material="Resina con mosaico" data-origen="Granada, España" data-desc="Marco de fotos decorado con diseño de mosaico árabe-andaluz, para fotos 10x15cm.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/marco fotos mosaico arabe.jpg" alt="Marco fotos mosaico" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Decoración</p>
+              <h3 class="producto-card__nombre">Marco de Fotos con Mosaico</h3>
+              <p class="producto-card__desc">Marco de fotos decorado con diseño de mosaico árabe-andaluz</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">4,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="decoracion" data-id="azulejo-decorativo" data-nombre="Azulejo Decorativo Árabe" data-precio="3,00 €" data-material="Cerámica" data-origen="Granada, España" data-desc="Azulejo decorativo con diseños nazaríes de la Alhambra, ideal para decorar paredes.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/azulejo.jpg" alt="Azulejo decorativo" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Decoración</p>
+              <h3 class="producto-card__nombre">Azulejo Decorativo Árabe</h3>
+              <p class="producto-card__desc">Azulejo decorativo con diseños nazaríes de la Alhambra</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">3,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="decoracion" data-id="lampara-aladino" data-nombre="Lámpara de Aladino Dorada" data-precio="15,00 €" data-material="Metal dorado" data-origen="Marruecos" data-desc="Réplica decorativa de la lámpara de Aladino en metal dorado, símbolo árabe por excelencia.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/lampara-aladino-gigante-dorada_5000x.jpg" alt="Lámpara Aladino" class="producto-card__img">
+              <span class="producto-card__badge">Popular</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Decoración</p>
+              <h3 class="producto-card__nombre">Lámpara de Aladino Dorada</h3>
+              <p class="producto-card__desc">Réplica decorativa de la lámpara de Aladino en metal dorado</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">15,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="decoracion" data-id="espejo-grande" data-nombre="Espejo Grande con Marco Dorado" data-precio="85,00 €" data-material="Metal dorado tallado" data-origen="Marruecos" data-desc="Espejo grande con marco de metal dorado tallado, diseño árabe de lujo para el hogar.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/espejo-con-marco-dorado-tallado.jpg" alt="Espejo grande dorado" class="producto-card__img">
+              <span class="producto-card__badge nuevo">Nuevo</span>
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Decoración</p>
+              <h3 class="producto-card__nombre">Espejo Grande con Marco Dorado</h3>
+              <p class="producto-card__desc">Espejo grande con marco de metal dorado tallado</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">85,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="producto-card" data-categoria="decoracion" data-id="alfombra-turca" data-nombre="Alfombra Turca Floral" data-precio="55,00 €" data-material="Lana y algodón" data-origen="Turquía" data-desc="Alfombra turca con diseño floral tradicional, tejida a mano por artesanos turcos.">
+            <div class="producto-card__img-wrapper">
+              <img src="img/alfombra-turca-floral-114x70_5000x.jpg" alt="Alfombra turca" class="producto-card__img">
+            </div>
+            <div class="producto-card__info">
+              <p class="producto-card__categoria">Decoración</p>
+              <h3 class="producto-card__nombre">Alfombra Turca Floral</h3>
+              <p class="producto-card__desc">Alfombra turca con diseño floral, tejida a mano, 114x70cm</p>
+              <div class="producto-card__footer">
+                <span class="producto-card__precio">55,00 €</span>
+                <button class="producto-card__btn" onclick="verDetalle(this)">Ver más</button>
               </div>
             </div>
           </div>
@@ -526,7 +1303,6 @@
 
       </div>
     </section>
-
   </main>
 
   <!-- FOOTER -->
@@ -534,11 +1310,17 @@
   </footer>
 
   <script>
-    // ── Filtros de categorías ──
+    // ── Filtros ──
     const botones = document.querySelectorAll('.filtro-btn');
     const cards   = document.querySelectorAll('.producto-card');
     const count   = document.getElementById('count');
     const sinResultados = document.getElementById('sinResultados');
+
+    function actualizarContador() {
+      const visible = document.querySelectorAll('.producto-card[style*="flex"]').length ||
+                      document.querySelectorAll('.producto-card:not([style*="none"])').length;
+      count.textContent = document.querySelectorAll('.producto-card').length;
+    }
 
     botones.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -563,12 +1345,52 @@
       });
     });
 
+    // Inicializar contador
+    count.textContent = cards.length;
+    // ── Búsqueda ──
+document.getElementById('busqueda').addEventListener('input', function() {
+  const texto = this.value.toLowerCase();
+  let visible = 0;
+
+  cards.forEach(card => {
+    const nombre = card.dataset.nombre.toLowerCase();
+    if (nombre.includes(texto)) {
+      card.style.display = 'flex';
+      visible++;
+    } else {
+      card.style.display = 'none';
+    }
+  });
+
+  count.textContent = visible;
+  sinResultados.style.display = visible === 0 ? 'block' : 'none';
+
+  botones.forEach(b => b.classList.remove('activo'));
+  document.querySelector('[data-categoria="todos"]').classList.add('activo');
+});
+
     // ── Leer categoría de la URL ──
     const params = new URLSearchParams(window.location.search);
     const categoriaURL = params.get('categoria');
     if (categoriaURL) {
       const btnCategoria = document.querySelector(`[data-categoria="${categoriaURL}"]`);
       if (btnCategoria) btnCategoria.click();
+    }
+
+    // ── Ver detalle ──
+    function verDetalle(btn) {
+      const card = btn.closest('.producto-card');
+      const params = new URLSearchParams({
+        id:       card.dataset.id,
+        nombre:   card.dataset.nombre,
+        precio:   card.dataset.precio,
+        material: card.dataset.material,
+        origen:   card.dataset.origen,
+        desc:     card.dataset.desc,
+        img:      card.querySelector('img').src,
+        categoria: card.dataset.categoria
+      });
+      window.location.href = 'detalle.html?' + params.toString();
     }
   </script>
 
