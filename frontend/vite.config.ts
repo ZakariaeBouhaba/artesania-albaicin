@@ -7,6 +7,11 @@ export default defineConfig({
     port: 5173,
     proxy: {
       '/api': { target: 'http://localhost:3001', changeOrigin: true },
+      '/cms-api': {
+        target: 'http://localhost:3002/api',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/cms-api/, ''),
+      },
     },
   },
 })

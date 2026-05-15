@@ -31,3 +31,10 @@ coverage/
 
 # Misc
 *.js.map
+
+# CMS (Payload)
+cms/node_modules/
+cms/.next/
+cms/.env
+cms/public/media/
+cms/src/payload-types.ts

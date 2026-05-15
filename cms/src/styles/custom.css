@@ -1,0 +1,347 @@
+/* =============================================================
+   ARTESANÍA ALBAYCÍN — Payload CMS Custom Theme
+
+   Strategy: Override --theme-elevation-* and accent colors
+   directly on the correct selectors so every Payload
+   component inherits the warm earthy palette automatically.
+   ============================================================= */
+
+/* ─── Shared: fonts, radius, brand accent ─────────────────── */
+:root {
+  --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'SF Mono', Menlo, Consolas, monospace;
+
+  --style-radius-s: 2px;
+  --style-radius-m: 4px;
+  --style-radius-l: 8px;
+}
+
+/* ─── Light mode: warm cream → deep ink ─────────────────────
+   elevation-0 = lightest surface (page bg)
+   elevation-1000 = darkest text/foreground
+   ──────────────────────────────────────────────────────────── */
+[data-theme="light"] {
+  --theme-elevation-0:    #faf5ea;
+  --theme-elevation-50:   #f6efe2;
+  --theme-elevation-100:  #f0e7d4;
+  --theme-elevation-150:  #e8dcc1;
+  --theme-elevation-200:  #ddd0ae;
+  --theme-elevation-250:  #d9ccae;
+  --theme-elevation-300:  #c8b88e;
+  --theme-elevation-350:  #b8a070;
+  --theme-elevation-400:  #a68d58;
+  --theme-elevation-450:  #937843;
+  --theme-elevation-500:  #7e6332;
+  --theme-elevation-550:  #6b5128;
+  --theme-elevation-600:  #5c4720;
+  --theme-elevation-650:  #4d3c1a;
+  --theme-elevation-700:  #3f3015;
+  --theme-elevation-750:  #2e2210;
+  --theme-elevation-800:  #22180c;
+  --theme-elevation-850:  #1b1209;
+  --theme-elevation-900:  #160f07;
+  --theme-elevation-950:  #110d05;
+  --theme-elevation-1000: #1d1a14;
+
+  --theme-bg:           var(--theme-elevation-0);
+  --theme-text:         var(--theme-elevation-1000);
+  --theme-input-bg:     var(--theme-elevation-0);
+  --theme-border-color: var(--theme-elevation-250);
+
+  /* Brand gold replaces Payload's default blue "success/primary" */
+  --theme-success-50:  #fdf7ec;
+  --theme-success-100: #f8edcf;
+  --theme-success-150: #f1dda8;
+  --theme-success-200: #e8c97e;
+  --theme-success-250: #ddb558;
+  --theme-success-300: #d0a040;
+  --theme-success-350: #c49030;
+  --theme-success-400: #c9a352;
+  --theme-success-450: #be9440;
+  --theme-success-500: #b18a3a;
+  --theme-success-550: #9e7a30;
+  --theme-success-600: #8c6a26;
+  --theme-success-650: #7a5a1e;
+  --theme-success-700: #664c18;
+  --theme-success-750: #503c12;
+  --theme-success-800: #3c2e0d;
+  --theme-success-850: #2a2009;
+  --theme-success-900: #1a1406;
+  --theme-success-950: #0d0a03;
+}
+
+/* ─── Dark mode: rich espresso → warm cream ─────────────────
+   elevation-0 = darkest surface (page bg in dark mode)
+   elevation-1000 = lightest foreground
+   ──────────────────────────────────────────────────────────── */
+[data-theme="dark"] {
+  --theme-elevation-0:    #1a1208;
+  --theme-elevation-50:   #201708;
+  --theme-elevation-100:  #261c0a;
+  --theme-elevation-150:  #2e240d;
+  --theme-elevation-200:  #382d12;
+  --theme-elevation-250:  #443617;
+  --theme-elevation-300:  #503f1c;
+  --theme-elevation-350:  #5c4820;
+  --theme-elevation-400:  #6a5428;
+  --theme-elevation-450:  #7a6135;
+  --theme-elevation-500:  #8a6e40;
+  --theme-elevation-550:  #9a7b4c;
+  --theme-elevation-600:  #aa8b5c;
+  --theme-elevation-650:  #baa170;
+  --theme-elevation-700:  #c8b484;
+  --theme-elevation-750:  #d4c498;
+  --theme-elevation-800:  #ddd4aa;
+  --theme-elevation-850:  #e5dfbe;
+  --theme-elevation-900:  #ede8d0;
+  --theme-elevation-950:  #f4f0e2;
+  --theme-elevation-1000: #faf5ea;
+
+  --theme-bg:           var(--theme-elevation-0);
+  --theme-text:         var(--theme-elevation-1000);
+  --theme-input-bg:     var(--theme-elevation-50);
+  --theme-border-color: var(--theme-elevation-200);
+
+  /* Brighter gold for dark backgrounds */
+  --theme-success-50:  #0d0a03;
+  --theme-success-100: #1a1406;
+  --theme-success-150: #2a2009;
+  --theme-success-200: #3c2e0d;
+  --theme-success-250: #503c12;
+  --theme-success-300: #664c18;
+  --theme-success-350: #7a5a1e;
+  --theme-success-400: #8c6a26;
+  --theme-success-450: #9e7a30;
+  --theme-success-500: #d4ac5a;
+  --theme-success-550: #dbb86a;
+  --theme-success-600: #e2c47c;
+  --theme-success-650: #e8cf90;
+  --theme-success-700: #edda9a;
+  --theme-success-750: #f1e3aa;
+  --theme-success-800: #f5ecbe;
+  --theme-success-850: #f8f2d2;
+  --theme-success-900: #fbf8e8;
+  --theme-success-950: #fdf9f0;
+}
+
+/* ─── Body font override ──────────────────────────────────── */
+[data-theme] body {
+  font-family: var(--font-body) !important;
+}
+
+/* ─── Serif headings ─────────────────────────────────────── */
+[data-theme] h1,
+[data-theme] h2,
+[data-theme] h3 {
+  font-family: var(--font-serif) !important;
+}
+
+/* ─── Navigation sidebar ─────────────────────────────────── */
+[data-theme="light"] .nav__wrap {
+  background: #1d1a14;
+  border-right: 1px solid #2e2719;
+}
+
+[data-theme="light"] .nav__link,
+[data-theme="light"] .nav__group-label {
+  color: #e8dcc1;
+}
+
+[data-theme="light"] .nav__link:hover {
+  color: #d4ac5a;
+  background: rgba(212, 172, 90, 0.08);
+  border-radius: 4px;
+}
+
+[data-theme="light"] .nav__link--active {
+  color: #b8602f !important;
+  background: rgba(184, 96, 47, 0.12) !important;
+  border-radius: 4px;
+}
+
+[data-theme="light"] .nav__group-label {
+  color: #8a7a5a;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 11px;
+}
+
+[data-theme="dark"] .nav__wrap {
+  background: #120e06;
+  border-right: 1px solid #201708;
+}
+
+[data-theme="dark"] .nav__link {
+  color: #ddd4aa;
+}
+
+[data-theme="dark"] .nav__link:hover {
+  color: #d4ac5a;
+  background: rgba(212, 172, 90, 0.08);
+  border-radius: 4px;
+}
+
+[data-theme="dark"] .nav__link--active {
+  color: #b8602f !important;
+  background: rgba(184, 96, 47, 0.12) !important;
+  border-radius: 4px;
+}
+
+/* ─── Primary button — gold ──────────────────────────────── */
+[data-theme] .btn.btn--style-primary,
+[data-theme] button[class*="btn--style-primary"] {
+  background: #b18a3a !important;
+  border-color: #b18a3a !important;
+  color: #faf5ea !important;
+}
+
+[data-theme] .btn.btn--style-primary:hover {
+  background: #9e7a30 !important;
+  border-color: #9e7a30 !important;
+}
+
+/* ─── Collection list row hover — terracotta accent ─────── */
+[data-theme="light"] .collection-list__row:hover,
+[data-theme="light"] .row-data:hover {
+  background: #fdf7ec !important;
+  border-left: 3px solid #b8602f !important;
+  transition: background 0.15s, border-left 0.15s;
+}
+
+[data-theme="dark"] .collection-list__row:hover,
+[data-theme="dark"] .row-data:hover {
+  background: #261c0a !important;
+  border-left: 3px solid #b8602f !important;
+}
+
+/* ─── Role badge pills ───────────────────────────────────── */
+.role-badge {
+  display: inline-block;
+  border-radius: 20px;
+  padding: 3px 10px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-family: var(--font-body);
+}
+
+.role-badge--super-admin { background: #b18a3a; color: #faf5ea; }
+.role-badge--admin       { background: #5c4720; color: #e8dcc1; }
+.role-badge--editor      { background: #2a4a20; color: #d4ecb8; }
+.role-badge--author      { background: #204a5c; color: #b8dce8; }
+.role-badge--viewer      { background: #3a3a3a; color: #e8e8e8; }
+
+/* ─── Dashboard stat widget gradient cards ───────────────── */
+.dashboard__widget {
+  border-radius: 8px;
+  padding: 24px 28px;
+  border: 1px solid;
+  transition: box-shadow 0.2s;
+}
+
+.dashboard__widget:hover {
+  box-shadow: 0 4px 24px rgba(29, 26, 20, 0.12);
+}
+
+[data-theme="light"] .dashboard__widget {
+  background: linear-gradient(135deg, #faf5ea 0%, #f0e7d4 100%);
+  border-color: #d9ccae;
+}
+
+[data-theme="dark"] .dashboard__widget {
+  background: linear-gradient(135deg, #201708 0%, #2e240d 100%);
+  border-color: #443617;
+}
+
+.dashboard__widget-label {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #8a7a5a;
+  margin-bottom: 8px;
+}
+
+.dashboard__widget-value {
+  font-size: 42px;
+  font-weight: 300;
+  line-height: 1;
+  font-family: var(--font-serif);
+}
+
+/* ─── Nav brand header ───────────────────────────────────── */
+.nav-brand {
+  padding: 20px 16px 14px;
+  border-bottom: 1px solid #2e2719;
+}
+
+.nav-brand__title {
+  font-family: var(--font-serif);
+  font-size: 15px;
+  font-weight: 600;
+  color: #d4ac5a;
+  letter-spacing: 0.03em;
+  line-height: 1.3;
+}
+
+.nav-brand__sub {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #8a7a5a;
+  margin-top: 2px;
+}
+
+/* ─── Collection icon grid ───────────────────────────────── */
+.coll-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 16px;
+  margin: 8px 0 24px;
+}
+
+.coll-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 18px;
+  border-radius: 8px;
+  border: 1px solid;
+  cursor: pointer;
+  text-decoration: none;
+  transition: box-shadow 0.15s, border-color 0.15s;
+}
+
+[data-theme="light"] .coll-card {
+  background: #faf5ea;
+  border-color: #d9ccae;
+  color: #1d1a14;
+}
+
+[data-theme="dark"] .coll-card {
+  background: #201708;
+  border-color: #443617;
+  color: #e8dcc1;
+}
+
+.coll-card:hover {
+  border-color: #b8602f !important;
+  box-shadow: 0 2px 12px rgba(184, 96, 47, 0.14);
+}
+
+.coll-card__icon {
+  color: #b18a3a;
+  flex-shrink: 0;
+}
+
+.coll-card__label {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+/* ─── Focus ring uses brand gold ─────────────────────────── */
+:focus-visible {
+  outline-color: var(--theme-success-500) !important;
+}
