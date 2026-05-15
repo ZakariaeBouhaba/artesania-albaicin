@@ -1,0 +1,16 @@
+{
+  "name": "artisania-albaycin-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "concurrently --names API,CMS,WEB --prefix-colors cyan,magenta,green \"npm run dev --prefix backend\" \"npm run dev --prefix cms\" \"npm run dev --prefix frontend\"",
+    "dev:api": "npm run dev --prefix backend",
+    "dev:cms": "npm run dev --prefix cms",
+    "dev:web": "npm run dev --prefix frontend",
+    "build": "npm run build --prefix backend && npm run build --prefix cms && npm run build --prefix frontend",
+    "install:all": "npm i --prefix backend && npm i --prefix cms && npm i --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

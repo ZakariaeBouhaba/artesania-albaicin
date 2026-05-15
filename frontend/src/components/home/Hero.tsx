@@ -8,9 +8,11 @@ export default function Hero() {
 
   return (
     <section className="hero">
-      <div
+      <img
         className="hero__img"
-        style={{ backgroundImage: "url(https://images.unsplash.com/photo-1591633986757-b7d56fa6f388?auto=format&fit=crop&w=2400&q=80)" }}
+        src="/hero-alhambra.jpg"
+        alt="La Alhambra de Granada al atardecer"
+        loading="eager"
       />
       <div className="hero__veil" />
       <svg className="hero__pattern" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" viewBox="0 0 800 600">
